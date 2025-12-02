@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this implementation, please cite the original Survival Seq2Seq paper."
+title: "Survival Seq2Seq"
+authors:
+  - family-names: "Horn"
+    given-names: "James D."
+    affiliation: "Georgia Tech College of Computing"
+  - family-names: "Falter"
+    given-names: "Michael"
+    affiliation: "Georgia Tech College of Computing"
+license: "MIT"
+preferred-citation:
+  type: article
+  title: "Survival Seq2Seq: A Survival Model based on Sequence to Sequence Architecture"
+  authors:
+    - family-names: "Pourjafari"
+      given-names: "Ebrahim"
+    - family-names: "Ziaei"
+      given-names: "Navid"
+    - family-names: "Rezaei"
+      given-names: "Mohammad R."
+    - family-names: "Sameizadeh"
+      given-names: "Amir"
+    - family-names: "Shafiee"
+      given-names: "Mohammad"
+    - family-names: "Alavinia"
+      given-names: "Mohammad"
+    - family-names: "Abolghasemian"
+      given-names: "Mansour"
+    - family-names: "Sajadi"
+      given-names: "Nick"
+  year: 2022
+  journal: "arXiv preprint arXiv:2204.04542"
+  url: "https://arxiv.org/abs/2204.04542"
