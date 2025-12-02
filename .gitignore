@@ -1,0 +1,11 @@
+# We definitely don't want to push a bunch of data
+*.duckdb*
+data/
+base_parquet/
+*.parquet
+*.png
+output/
+output_ddh/
+
+# Python
+__pycache__
