@@ -1,0 +1,22 @@
+name: survival
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.12
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.4
+  - pandas
+  - tqdm
+  - matplotlib
+  - scikit-learn
+  - duckdb
+  - ipykernel
+  - mkl[version='<2024.1']
+  - intel-openmp[version='<2024.1']
+  - pyarrow
+  - fastparquet
+  - seaborn
