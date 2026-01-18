@@ -9,7 +9,7 @@ Team 26, Team ID: F1
 ## Getting Started
 
 ### Dataset
-**Important:** You MUST obtain a copy of MIMIC-IV 1.0 on your own to run the preprocessing or training code. We would be in violation of our data access agreements if we were to share any of the MIMIC data ourselves. We have provided a few trained models for your personal use if you don't wish to train them yourself.  
+**Important:** You MUST obtain a copy of MIMIC-IV 1.0 on your own to run the preprocessing or training code. We would be in violation of data access agreements if we were to share any of the MIMIC data ourselves. We have provided a few trained models for your personal use if you don't wish to train them yourself.  
 
 If you would prefer to follow the data-access directions on MIT.edu, you can find them [here](https://mimic.mit.edu/docs/gettingstarted/).
 
