@@ -1,4 +1,4 @@
-# survival-seq2seq
+# Survival Seq2seq
 Reproducing the results of Survival Seq2Seq: A Survival Model based on Sequence to Sequence Architecture
 
 Team 26, Team ID: F1
