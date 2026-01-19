@@ -26,6 +26,11 @@ It is common to restict to adult patients due to the complexities in modeling fo
 
 ### Feature Selection Pipeline
 
+#### Documented, from revision work:
+1. Remove `data.db` and `data.duckdb.wal` files at the output path, if present.
+2. Create and configure database instance.
+
+#### Original:
 1. Top Numeric Features in CHARTEVENTS (most common)
 2. Top Numeric Features in INPUTEVENTS (most common)
 3. Top Numeric Features in OUTPUTEVENTS (most common)

@@ -1,8 +1,15 @@
 # Preprocessing script for MIMIC-IV 1.0 data
 
 ####################################################################################################
-############### THIS IS WHAT YOU SHOULD CHANGE ACCORDING TO YOUR MIMIC DATA LOCATION ###############
-PATH_TO_RAW_MIMIC_DATA = "/mnt/d/mimic-4-1.0/physionet.org/files/mimiciv/1.0/"
+############################################ Constants #############################################
+PATH_TO_RAW_MIMIC_DATA = "/mnt/d/mimic-4-1.0/physionet.org/files/mimiciv/1.0/" # Download location
+BASE_OUTPUT_PATH = "data/base_parquet/" # Where do you want intermediate tables/files?
+CLEAR_DB_DATA = True # Delete existing duckdb files in BASE_OUTPUT_PATH
+DATA_DIR = "data/" # Where you want intermediate and preprocessed data to be written
+# TODO: Use these constants and pass through to called functions
+DDB_DATABASE_NAME = DATA_DIR + "data.duckdb"
+DDB_MEMORY_LIMIT = "8GB" # GB or % of memory usage before duckdb spills to disk temp files
+DDB_TEMP_DIRECTORY = BASE_OUTPUT_PATH # Location of duckdb temp dir for "swap" spill files
 ####################################################################################################
 ####################################################################################################
 
@@ -16,16 +23,12 @@ from mimic_pipeline.io_registry import prepare_base_data
 from mimic_pipeline.cohort import cohort_and_cleaning
 from mimic_pipeline.timeseries import timeseries_creation
 
-# Constants
-CLEAR_DB_DATA = True
-DATA_DIR = "data/"
-BASE_OUTPUT_PATH = "data/base_parquet/"
-
 
 def main():
     os.makedirs(DATA_DIR, exist_ok=True)
 
-    # Clear previous ddb file if needed
+    # 1
+    # Clear previous ddb file if needed - we have not directly identified any issues if you fail to do this and overwrites occur
     if CLEAR_DB_DATA:
         ddb_path = os.path.join(BASE_OUTPUT_PATH, "data.db")
         if os.path.exists(ddb_path):
@@ -34,9 +37,13 @@ def main():
         if os.path.exists(ddb_path):
             os.remove(ddb_path)
 
-    # Prep ddb connection for data exploration
+    # 2
+    # Create and configure db connection
     ddb = configure_duckdb(database_name=DATA_DIR + "data.duckdb", memory_limit="8GB", temp_directory=BASE_OUTPUT_PATH)
     
+    # 3
+    # 
+    # TODO: Remove duplicate connection made in this function and verify results
     prepare_base_data(
         ddb,
         data_dir=DATA_DIR,
