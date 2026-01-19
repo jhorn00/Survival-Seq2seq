@@ -59,4 +59,4 @@ Models can be trained or run using the top-level python scripts under models. Fu
 - Data processing
     - [mimic-code](https://github.com/MIT-LCP/mimic-code) was extremely helpful in determining what metrics we should consider for patient time-series data.
 - Helper Libraries
-    - [GRU-D](https://github.com/zhiyongc/GRU-D)
+    - [GRU-D](https://github.com/zhiyongc/GRU-D): GRU-D implementation based on "Recurrent neural networks for multivariate time series with missing values" by Che, Zhengping and Purushotham, Sanjay and Cho, Kyunghyun and Sontag, David and Liu, Yan (2018).
