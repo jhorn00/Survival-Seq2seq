@@ -1,11 +1,6 @@
 # Survival Seq2seq
 Reproducing the results of Survival Seq2Seq: A Survival Model based on Sequence to Sequence Architecture
 
-Team 26, Team ID: F1
-- Dawson Horn
-- Michael Falter
-
-
 ## Getting Started
 
 ### Dataset
@@ -64,6 +59,4 @@ Models can be trained or run using the top-level python scripts under models. Fu
 - Data processing
     - [mimic-code](https://github.com/MIT-LCP/mimic-code) was extremely helpful in determining what metrics we should consider for patient time-series data.
 - Helper Libraries
-    - [Dynamic Deep Hit](https://github.com/Jeanselme/DynamicDeepHit)
-    - [Deep Survival Machines](https://github.com/autonlab/DeepSurvivalMachines/tree/c454774199c389e7bb9fa3077f153cdf4f1e7696)
     - [GRU-D](https://github.com/zhiyongc/GRU-D)

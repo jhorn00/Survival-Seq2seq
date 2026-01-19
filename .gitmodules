@@ -1,0 +1,6 @@
+[submodule "models/Dynamic-DeepHit"]
+	path = models/Dynamic-DeepHit
+	url = https://github.com/chl8856/Dynamic-DeepHit.git
+[submodule "models/GRU-D"]
+	path = models/GRU-D
+	url = https://github.com/zhiyongc/GRU-D.git
