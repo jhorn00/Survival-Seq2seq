@@ -1,0 +1,3 @@
+[submodule "models/GRU-D"]
+	path = models/GRU-D
+	url = https://github.com/zhiyongc/GRU-D.git
