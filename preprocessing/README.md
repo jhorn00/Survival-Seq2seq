@@ -1,25 +1,31 @@
 # Preprocessing
 
-**Important:** You MUST obtain a copy of MIMIC-IV 1.0 on your own to run the preprocessing or training code. We would be in violation of our data access agreements if we were to share any of the MIMIC data ourselves.
+**Important:** You MUST obtain a copy of MIMIC-IV 1.0 on your own to run the preprocessing or training code. We would be in violation of data access agreements if we were to share any of the MIMIC data ourselves.
+
+---
 
 ## Usage Instructions
-- Configure and activate your `conda` environment if you have not already. (See `Survival-Seq2seq/README.md/Getting Started`)
-- Change the constant `PATH_TO_RAW_MIMIC_DATA` at the top of `pipeline.py` to match where your raw MIMIC-IV 1.0 data is located
+- Set the constants in `environment.py` to match your configuration.
+- Configure and activate your `conda` environment if you have not already. (See [Environment](../README.md#environment))
 - Run preprocessing pipeline with `python pipeline.py`
 
-## Background and Notes
+## Background, Notes, and Rationale
 ### Data filters and restrictions
 #### 24 Hour Window
 Using a 24-hour window from the first instance of ICU data is a common restriction with a long precedent in academic works. It is highly likely the same filter was applied to the data in the paper we are attempting to replicate.
 - Most notably, the [MIMIC Code Repository](https://github.com/MIT-LCP/mimic-code/tree/main/mimic-iv/concepts/firstday) and [MIMIC-Extract Pipeline](https://github.com/MLforHealth/MIMIC_Extract) use this restriction for ICU data
 - These apparently follow the lead of scoring methodologies such as [SAPS-II](https://pubmed.ncbi.nlm.nih.gov/8254858/) and [APACHE II (The linked paper uses APACHE II and summarizes its methodology)](https://pmc.ncbi.nlm.nih.gov/articles/PMC10060092/)
 - [OASIS also makes use of information within the first 24 hours of ICU admission](https://pubmed.ncbi.nlm.nih.gov/23660729/)
-This can help avoid correlation stemming from readmission.
+
+Limiting data to the first 24-hours of ICU admission for each patient can help avoid correlation stemming from readmission.
 
 #### Adult Patients
-It is common to restict to adult patients due to the complexities in modeling for youth and adults, however the dataset already has this restriction present in the `ICUSTAYS` data.
+It is common to restict to adult patients due to the complexities in modeling for youth and adults, however the dataset already has this restriction present in the `ICUSTAYS` data. We ensured only adults were included anyway, but it's worth noting that no data was pruned as a result.
 
-### Feature Selection
+---
+
+### Feature Selection Pipeline
+
 1. Top Numeric Features in CHARTEVENTS (most common)
 2. Top Numeric Features in INPUTEVENTS (most common)
 3. Top Numeric Features in OUTPUTEVENTS (most common)
